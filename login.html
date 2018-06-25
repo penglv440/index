@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/jQuery.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+    <script src="js/getRandom.js"></script>
+    <style>
+        body{
+            background-image:url("image/login_bg.jpg") ;
+            background-size:100%;
+        }
+        #wrap1{
+            position:relative;
+        }
+        #wrap2{
+            position:absolute;
+            width:300px;
+            height:300px;
+            padding:20px;
+            border:1px solid rgb(34,34,34);
+            background:rgba(233,233,233,0.5);
+             top:200px;
+            left:50%;
+            transform:translateX(-50%);
+        }
+        #wrap2 input{
+            margin-top:10px;
+        }
+        #wrap2 .loginbar{
+            margin-top:20px;
+            height:35px;
+            line-height:35px;
+            font-size:16px;
+            background:lightcoral;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid" id="wrap1">
+    <div class="well-lg">
+        欢迎您的到来！
+        <span class="pull-right"><a href="index.html">返回主页 <<</a></span>
+    </div>
+    <div id="wrap2">
+          <form action="" method="post" id="form" class="from-inline">
+              <input type="telephone" name="telephone" class="form-control" placeholder="手机号"/>
+              <!--验证码-->
+              <div class="input-group">
+              <input type="text" name="valid_code"class="form-control" placeholder="验证码"/>
+                  <span class="input-group-addon btn btn-default"  id="validate_btn" >验证码</span>
+              </div>
+              <div class="input-group">
+                  <input type="text" name="phone_code" class="form-control" placeholder="手机验证码"/>
+                  <div class="input-group-addon btn btn-default" id="get_validate_date" style="height:10px;padding:2px;
+          ">获取验证码</div>
+              </div>
+              <label>
+              <input type="checkbox" id="check_btn" />我已阅读并同意<a data-toggle="modal"
+            data-target="#myModal" href="#">用户隐私</a>和<a
+             data-toggle="modal" data-target="#myModal" href="#">隐私条款</a>
+              </label>
+          </form>
+        <div class="btn btn-block text-center btn-primary disabled" id="login_btn">登录</div>
+        <p class="text-center">还没有账户?点击<a href="regesitar.html">注册</a></p>
+        <div class="text-center">
+            <span style="padding-right:20px"><a href="#"><img id="user_login_btn" src="image/user_login.png"/></a></span>
+            <span><a href="#"><img id="QQ_login_btn" src="image/QQ_login.png"/></a></span>
+            <span style="padding-left:20px"><a href="#"><img id="wechat_login_btn" src="image/wechat_login.png"/></a></span>
+        </div>
+        <div class="text-center">
+            <span style="padding-right:22px">账号</span>
+            <span>QQ</span>
+            <span style="padding-left:24px">微信</span>
+        </div>
+    </div>
+</div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    用户使用说明
+                </h4>
+            </div>
+            <div class="modal-body">
+                1.你啥都是都等你撒的撒
+                <br><input type="checkbox" id="checkbox"/>同意使用说明
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    关闭
+                </button>
+                <button type="button" class="btn btn-primary" id="checkbox_btn">
+                  确定
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</body>
+<script>
+
+    console.log($("body").css("height"));
+    console.log($("input").css("height"));
+    $("#validate_btn").click(function(){
+      $(this).text(getRandom(1000,9999));
+    });
+    var num=60;
+    //验证码的重新获取
+    $("#get_validate_date").click(function(){
+        console.log(num);
+         var timer=setInterval(function(){
+             num--;
+             $("#get_validate_date").text(num);
+             if(num==0){
+                 clearInterval(timer);
+                 $("#text_validate_date").text("点击重新获取");
+             }
+         },1000)
+    });
+    //输入完毕后，登录状态发生变化
+    $("#check_btn").click(function(){
+        if($("#check_btn").is(':checked')){
+            $("#login_btn").removeClass("disabled");
+            $("#login_btn").click(function(){
+                $(this).text("正在登录---");
+                $(this).addClass("active");
+            });
+        }else{
+            $("#login_btn").addClass("disabled");
+        }
+    });
+    //点击下方账号登录，图标发生变化，
+
+//模态框
+    $(function () { $('#myModal').modal('hide')});
+
+//点击确认按钮后关闭模态框
+
+    $("#checkbox_btn").click(function(){
+         $('#myModal').modal('hide');
+    });
+    //点击账户图标后切换到账号登录界面
+    $("#user_login_btn").click(function(){
+        $(this).css({
+            width:'35px',
+            height:'35px'
+        });
+       console.log($("input[type='telephone']"));
+        $("input[type='telephone']").replaceWith('<input type="telephone" name="telephone" class="form-control" ' +
+            'placeholder="账号"/>');
+       $("input[name='phone_code']").replaceWith('  <input type="password" name="psd" class="form-control" ' +
+           'placeholder="密码" style="width:100%"/>');
+        $("#get_validate_date").remove();
+    });
+</script>
+</html>

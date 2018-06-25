@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>登录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <script type="text/javascript" src="js/jQuery.js" ></script>
+        <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+        <script src="js/getRandom.js"></script>
+        <style>
+            body{
+                background-image:url("image/login_bg.jpg") ;
+                background-size:100%;
+            }
+            #wrap1{
+                position:relative;
+            }
+            #wrap2{
+                position:absolute;
+                width:300px;
+                height:300px;
+                padding:20px;
+                border:1px solid rgb(34,34,34);
+                background:rgba(233,233,233,0.5);
+                top:200px;
+                left:50%;
+                transform:translateX(-50%);
+            }
+            #wrap2 input{
+                margin-top:10px;
+            }
+            #wrap2 .loginbar{
+                margin-top:20px;
+                height:35px;
+                line-height:35px;
+                font-size:16px;
+                background:lightcoral;
+            }
+        </style>
+</head>
+<body>
+<div class="container-fluid" id="wrap1">
+    <div class="well-lg">
+        欢迎您的到来！
+        <span class="pull-right"><a href="index.html">返回主页 <<</a></span>
+    </div>
+    <div id="wrap2">
+        <form action="" method="post" id="form" class="from-inline">
+            <input type="telephone" name="telephone" class="form-control" placeholder="手机号"/>
+            <!--手机验证码-->
+            <div class="input-group">
+                <input type="text" name="phone_code" class="form-control" placeholder="手机验证码"/>
+                <div class="input-group-addon btn btn-default" id="get_validate_date" style="height:10px;padding:2px;
+          ">获取验证码</div>
+            </div>
+            <div id="wrap3" ></div>
+            <span style="margin-bottom:60px">或使用<a href="#">邮箱注册</a></span>
+        </form>
+        <div class="btn btn-block text-center btn-primary" id="regesitar_btn" >注册</div>
+
+        <div class="text-center">
+            <span><a href="#"><img id="QQ_login_btn" src="image/QQ_login.png"/></a></span>
+            <span style="padding-left:20px"><a href="#"><img id="wechat_login_btn" src="image/wechat_login.png"/></a></span>
+        </div>
+        <div class="text-center">
+            <span>QQ</span>
+            <span style="padding-left:24px">微信</span>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $("#get_validate_date").click(function(){
+        $("#wrap3").html("<input type='text' class='form-control' placeholder='验证码'>");
+    });
+</script>
+</html>

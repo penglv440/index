@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布任务</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/jQuery.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+    <style>
+        #publish_section{
+            margin-top:50px;
+        height:414px;
+        background-image:url("image/publish_bg1.jpg");
+        }
+        #publish_section1{
+            margin-top:40px;
+        }
+        .list-group{
+            background-color:rgb(34,34,34);
+
+        }
+        .list-group .list-group-item{
+            border:none;
+            width:33.33%;
+            height:30px;
+            color:white;
+            float:left;
+            background-color:rgb(34,34,34);
+        }
+        #footer-root{
+            width:100%;
+            padding-right:0;
+            padding-left:0;
+
+        }
+        #footer-bottom{
+            height:100px;
+            background:rgb(34,34,34);
+            color:white;
+            line-height:100px;
+        }
+    </style>
+</head>
+<body>
+<!--页面导航栏部分-->
+<header>
+    <nav class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation" style="padding:0;margin:0;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand icon-name" href="index.html"><< 返回首页</a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="#">如何找任务</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            切换任务 <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="receive.html">接收任务</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-user"></span>注册</a>
+                    </li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-shopping-cart"></span>登录</a></li>
+                    <li><a href="#">客服</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            关于我们 <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">公司介绍</a></li>
+                            <li><a href="#">核心科技</a></li>
+                            <li><a href="#">设计</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">产品优势</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">核心竞争力</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!--主题区-->
+<article>
+    <div class="container-fluid" id="publish_section">
+              <div class="container" id="publish_section1">
+                  <div class="row text-center">
+                      <div class="col-md-12"><h1>您即将发布以下两个项目</h1></div>
+                  </div>
+            <div class="row" style="font-size:20px;">
+                <div class="col-xs-6 column">
+                    <h2>
+                   悬赏类
+                    </h2>
+                    <p>
+                        您可以在这儿发布悬赏类项目，悬赏金额，帮您找到更合适的人
+                    </p>
+                    <p>
+                        <a class="btn" href="#" style="font-size:18px;">点击发布 »</a>
+                    </p>
+                </div>
+                <div class="col-xs-6 column">
+                    <h2>
+                        专一类
+                    </h2>
+                    <p>
+                       您可以在这儿发布专一类项目，方便更专业的人士来帮您解决难题
+                    </p>
+                    <p>
+                        <a class="btn" href="#" style="font-size:18px;">点击发布 »</a>
+                    </p>
+                </div>
+            </div>
+              </div>
+</article>
+<!--底部-->
+<footer>
+    <div class="container-fluid" id="footer-root">
+        <ul class="list-group">
+            <li class="list-group-item"><a href="#">公司介绍</a></li>
+            <li class="list-group-item"><a href="#">个人管理</a></li>
+            <li class="list-group-item"><a href="#">工作</a></li>
+            <li class="list-group-item"><a href="#">关于我们</a></li>
+            <li class="list-group-item"><a href="#">个人信息</a></li>
+            <li class="list-group-item"><a href="#">工作日记</a></li>
+            <li class="list-group-item"><a href="#">联系</a></li>
+            <li class="list-group-item"><a href="#">沟通</a></li>
+            <li class="list-group-item"><a href="#">时间表</a></li>
+            <li class="list-group-item"><a href="#">反馈</a></li>
+            <li class="list-group-item"><a href="#">事务历史记录</a></li>
+            <li class="list-group-item"><a href="#">谢谢</a></li>
+        </ul>
+    </div>
+
+</footer>
+<div class="container-fluid text-center" id="footer-bottom">
+    @copyright2018-2022 西安揽众网络科技有限责任公司
+</div>
+</body>
+</html>
